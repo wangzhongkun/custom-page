@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义页面</title>
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+    <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <script src="../lib/jquery/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/sortable/Sortable.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../lib/nicescroll/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+    <script src="js/Util.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../lib/jquery-minicolors-2.2.6/jquery.minicolors.css">
+    <script src="../lib/jquery-minicolors-2.2.6/jquery.minicolors.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="cp-container">
+        <div class="cp-left">
+            <div>375 X 667 <span style="margin-left: 20px">比例 <input id="zoom-value" type="number" style="width: 50px" value="100" /> %</span></div>
+            <div class="cp-iphone6">
+                <iframe id="edit-iframe" class="i-screen" src="edit.html">
+                </iframe>
+                <!-- <div class="i-screen">
+                    <div id="items">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="cp-right" style="padding-top:20px;padding-right: 10px; ">
+            <ul class="sui-nav nav-tabs tab-wraped" style="background: #fcfcfc;">
+                <li class="active">
+                    <a href="#components" data-toggle="tab">
+                        <h3>组件</h3></a>
+                </li>
+                <li class="pc-edit-tab">
+                    <a href="#edit-property" data-toggle="tab">
+                        <h3>编辑属性</h3></a>
+                </li>
+            </ul>
+            <div class="tab-content tab-wraped cp-tab-content">
+                <div id="components" class="tab-pane active" style="height: 100%;position: relative;">
+                    <div id="items1">
+                    </div>
+                </div>
+                <div id="edit-property" class="tab-pane">
+                    <div style="text-align: right;margin-bottom: 10px">
+                        <input type="hidden" value="" id="component-id">
+                        <a id="cp-btn-save" href="javascript:void(0);" class="sui-btn btn-xlarge btn-primary">保存</a>
+                        <a id="cp-btn-cancel" href="javascript:void(0);" class="sui-btn btn-xlarge btn-danger">取消</a>
+                    </div>
+                    <div id="edit-dynamic" style="height: 750px;position: relative;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/template" id="edit-template">
+        <div class="edit-panel" edit-type="<@ it.type>">
+            <div class="field-actions">
+                <a class="ep-close"><i class="iconfont icon-close"></i></a><a class="ep-edit"><i class="iconfont icon-pencil"></i></a>
+            </div>
+            <div class="edit-container">
+                <div class="edit-img">
+                    <img src="<@ it.img>" />
+                </div>
+                <div class="edit-name">
+                    <@ it.name>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script src="js/main2.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+{
+    "poster":
+    {
+        "type": "poster",
+        "name": "海报",
+        "img": "/custom-page/component/poster/data/img/poster.jpg",
+        "export": "CPPoster",
+        "editExport": "CPEditPoster",
+        "depend":
+        {
+            "main":
+            {
+                "js": [
+                    "/custom-page/component/poster/main/js/poster.js"
+                ],
+                "css": [
+                    "/custom-page/component/poster/main/css/poster.css"
+                ]
+            },
+            "edit":
+            {
+                "js": [
+                    "/custom-page/component/poster/edit/js/poster.js"
+                ],
+                "css": [
+                    "/custom-page/component/poster/edit/css/poster.css"
+                ]
+
+            }
+        }
+    },
+    "poster1":
+    {
+        "type": "poster1",
+        "name": "海报",
+        "img": "/custom-page/component/poster/data/img/poster.jpg",
+        "export": "CPPoster",
+        "editExport": "CPEditPoster",
+        "depend":
+        {
+            "main":
+            {
+                "js": [
+                    "/custom-page/component/poster/main/js/poster.js"
+                ],
+                "css": [
+                    "/custom-page/component/poster/main/css/poster.css"
+                ]
+            },
+            "edit":
+            {
+                "js": [
+                    "/custom-page/component/poster/edit/js/poster.js"
+                ],
+                "css": [
+                    "/custom-page/component/poster/edit/css/poster.css"
+                ]
+
+            }
+        }
+    }
+}

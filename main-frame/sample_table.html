@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table.hovertable {
+				width: 800px;
+				font-family: verdana, arial, sans-serif;
+				font-size: 11px;
+				color: #333333;
+				border-width: 1px;
+				border-color: #999999;
+				border-collapse: collapse;
+			}
+			
+			table.hovertable th {
+				background-color: #45aeea;
+				border-width: 1px;
+				padding: 8px;
+				border-style: solid;
+				border-color: #D9D9D9;
+			}
+			
+			table.hovertable tr {
+				background-color: #FFFFFF;
+			}
+			
+			table.hovertable td {
+				border-width: 1px;
+				padding: 8px;
+				border-style: solid;
+				border-color: #D9D9D9;
+			}
+		</style>
+		<script type="text/javascript" src="../lib/jquery/jquery-3.3.1.js" ></script>
+		<script>
+			var zoomRate = 0.02; //每次放缩比例增量
+			var maxRate = 1.5; //最大放大倍数
+			var minRate = 0.6; //最小缩小倍数
+			var currZoom = 1; //当前缩放比
+			//放大
+			function ZoomIn() {
+				if(currZoom >= maxRate) {
+					return;
+				} else {
+					currZoom += zoomRate;
+					$('body').css('zoom',currZoom);
+				}
+			}
+			//缩小
+			function ZoomOut() {
+				if(currZoom <= minRate) {
+					return;
+				} else {
+					currZoom -= zoomRate;
+					$('body').css('zoom',currZoom);
+				}
+			}
+			//恢复正常显示 100%
+			function initZoom() {
+				currZoom = 1;
+				$('body').css('zoom',currZoom);
+			}
+		
+		</script>
+		
+	</head>
+
+	<body>
+		<table class="hovertable">
+			<tr>
+				<th>Info Header 1</th>
+				<th>Info Header 2</th>
+				<th>Info Header 3</th>
+				<th>Info Header 4</th>
+			</tr>
+			<tr onmouseover="this.style.backgroundColor='#FFE6B0';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+				<td>Item 1A</td>
+				<td>Item 1B</td>
+				<td>Item 1C</td>
+				<td>Item 1D</td>
+			</tr>
+			<tr onmouseover="this.style.backgroundColor='#FFE6B0';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+				<td>Item 2A</td>
+				<td>Item 2B</td>
+				<td>Item 2C</td>
+				<td>Item 2D</td>
+			</tr>
+			<tr onmouseover="this.style.backgroundColor='#FFE6B0';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+				<td>Item 3A</td>
+				<td>Item 3B</td>
+				<td>Item 3C</td>
+				<td>Item 3D</td>
+			</tr>
+			<tr onmouseover="this.style.backgroundColor='#FFE6B0';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+				<td>Item 4A</td>
+				<td>Item 4B</td>
+				<td>Item 4C</td>
+				<td>Item 4D</td>
+			</tr>
+			<tr onmouseover="this.style.backgroundColor='#FFE6B0';" onmouseout="this.style.backgroundColor='#FFFFFF';">
+				<td>Item 5A</td>
+				<td>Item 5B</td>
+				<td>Item 5C</td>
+				<td>Item 5D</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

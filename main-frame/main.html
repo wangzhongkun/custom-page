@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义页面</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  	<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+  	<link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui-append.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="../lib/flexible/flexible.css">
+  	<!-- <link rel="stylesheet" type="text/css" href="../lib/jquery-ui-1.12.1/jquery-ui.css"> -->
+  	<!-- <link rel="stylesheet" type="text/css" href="../css/icon/iconfont.css"> -->
+
+	<script src="../lib/jquery/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../lib/sortable/Sortable.js" type="text/javascript" charset="utf-8"></script>
+	<!-- <script src="../lib/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript" charset="utf-8"></script> -->
+	<script src="../lib/nicescroll/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="http://g.alicdn.com/sj/dpl/1.5.1/js/sui.min.js"></script>
+	<style type="text/css" media="screen">
+		/** {
+			padding: 0;
+			margin: 0;
+		}
+		
+		ol, ul { list-style: none }*/
+		/*html,body {
+			width: 100%;
+			height: 100%;
+		}*/
+		html,body {
+			background-color: #f2f2f2;
+			background-image: url(data:image/png;base64,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);
+			font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+		}
+
+		.cp-container {
+			display: block;
+			width: 100%;
+			height: 100%;
+			/*background: #000000;*/
+		}
+		.cp-container:after {
+			display: block;
+			content: "";
+			clear: both;
+		}
+
+		.cp-left {
+			box-sizing: border-box;
+			width: 50%;
+			float: left;
+			/*border: 1px solid #000;*/
+			height: 100%;
+		}
+		.cp-right {
+			box-sizing: border-box;
+			width: 50%;
+			float: right;
+			/*border: 1px solid #000;*/
+			height: 100%;
+		}
+
+		.cp-iphone6 {
+			width: 375px;
+			height: 667px;
+			margin: 20px auto;
+			background: url(images/main/bgiphone.png) no-repeat;
+			background-size: 100% 100%;
+			padding: 116px 28px 100px 26px;
+		}
+
+		.i-screen {
+			width: 375px;
+			height: 667px;
+			/*box-sizing: border-box;*/
+			border: 1px solid #EFEFEF;
+			overflow-y: auto;
+			overflow-x: hidden;
+			background-color: #fff;
+		}
+		#items {
+			width: 100%;
+			min-height: 100%;
+		}
+		#items>div,#items1>div{
+			border: 1px solid red;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			background: #fff;
+		}
+		#items .sortable-ghost, #items1 .sortable-ghost{
+		    opacity: 0.4;
+		    background-color: #F4E2C9;
+		}
+		.edit-panel {
+			position: relative;
+		}
+		#items .edit-panel:hover .field-actions {
+		    opacity: 1;
+		}
+		.field-actions {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    opacity: 0;
+		    font-size: 16px;
+		    line-height: 22px;
+		    font-weight: bold;
+		}
+
+		#items .edit-panel.ep-pre-close{
+			background: #fdd;
+		}
+		/*.field-actions i {
+		    margin: 10px;
+		    display: inline-block;
+		    width: 24px;
+		    padding: 10px;
+		    border-radius: 6px;
+		    background-color: #ddd;
+		}*/
+		.edit-panel.ep-pre-close .ep-close {
+			background: #c66865;
+			color: #fff;
+		}
+		.edit-panel.ep-pre-edit .ep-edit {
+			background: #65aac6;
+			color: #fff;
+		}
+		.field-actions a {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+		    line-height: 30px;
+		    color: #000;
+		    background-color: #fff;
+		    vertical-align: top;
+		    border: 1px solid transparent;
+		    border-color: #c5c5c5;
+		    border-width: 1px 0 1px 1px;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		.field-actions a:first-child {
+		    border-bottom-left-radius: 5px;
+		}
+		.field-actions a:last-child {
+		    border-top-right-radius: 5px;
+		    border-width: 1px 1px 1px 1px;
+		}
+		.sui-nav.nav-tabs.tab-wraped>li h3 {
+		    font-size: 14px;
+		    line-height: 14px;
+		    font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="cp-container">
+		<div class="cp-left">
+			<div>375 X 667 <span style="margin-left: 20px">比例 <input id="zoom-value" type="number" style="width: 50px" value="100" /> %</span></div>
+			<div class="cp-iphone6">
+				<div class="i-screen">
+					<div id="items">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cp-right" style="padding-top:20px;padding-right: 10px; ">
+<ul class="sui-nav nav-tabs tab-wraped" style="background: #fcfcfc;">
+  <li class="active"><a href="#index" data-toggle="tab">
+      <h3>组件</h3></a></li>
+  <li class="pc-edit-tab"><a href="#profile" data-toggle="tab">
+      <h3>编辑属性</h3></a></li>
+</ul>
+<div class="tab-content tab-wraped" style="background: #fff;height: 810px;overflow-y: auto ">
+  <div id="index" class="tab-pane active">
+			<div id="items1">
+				<div class="edit-panel">
+					<div class="field-actions">
+						<a class="ep-close"><i class="sui-icon icon-tb-close"></i></a><a  class="ep-edit"><i class="sui-icon icon-pencil"></i></a>
+					</div>
+			    <a href="javascript:void(0);" class="sui-btn"><i class="sui-icon icon-pencil"></i>默认</a>
+			    item 1
+				</div>
+			    <div class="edit-panel">
+					<div class="field-actions">
+						<a class="ep-close"><i class="sui-icon icon-tb-close"></i></a><a  class="ep-edit"><i class="sui-icon icon-pencil"></i></a>
+					</div>
+			    	item 2
+				</div>
+			    <div class="edit-panel">
+					<div class="field-actions">
+						<a class="ep-close"><i class="sui-icon icon-tb-close"></i></a><a  class="ep-edit"><i class="sui-icon icon-pencil"></i></a>
+					</div>
+					item 3
+				</div>
+			    <div class="edit-panel">
+					<div class="field-actions">
+						<a class="ep-close"><i class="sui-icon icon-tb-close"></i></a><a  class="ep-edit"><i class="sui-icon icon-pencil"></i></a>
+					</div>
+					item 4
+				</div>
+			    <div class="edit-panel">
+					<div class="field-actions">
+						<a class="ep-close"><i class="sui-icon icon-tb-close"></i></a><a  class="ep-edit"><i class="sui-icon icon-pencil"></i></a>
+					</div>
+					item 5
+				</div>
+			</div>
+  </div>
+  <div id="profile" class="tab-pane">
+    <p>Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park</p>
+  </div>
+  <div id="about" class="tab-pane">
+    <p>Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+  </div>
+  <div id="help" class="tab-pane">
+    <p>help!!!help!!!help!!!help!!!help!!!help!!!help!!!help!!!help!!!help!!!help!!!</p>
+  </div>
+</div>
+		</div>
+	</div>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

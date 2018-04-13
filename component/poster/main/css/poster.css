@@ -1,0 +1,10 @@
+.poster-container {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.poster-container img {
+	display: block;
+	width: 100%;
+}
